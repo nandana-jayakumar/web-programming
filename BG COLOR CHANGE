@@ -1,0 +1,41 @@
+let colorArray = ["Cyan", "Red", "LightSeaGreen", "Pink", "Blue", "Black", "Yellow", "White",
+"LightBlue"];
+let button = document.getElementById("Color_change");
+let label = document.getElementById("color");
+button.addEventListener("click", changeBgcolor);
+function changeBgcolor() {
+let randomindex = Math.floor(Math.random() * colorArray.length);
+let selectColor = colorArray[randomindex];
+document.body.style.backgroundColor = selectColor;
+document.body.style.color = (selectColor === "Black") ? "white" : "black";
+label.innerHTML = selectColor;
+}
+
+Main.html
+
+<html>
+<head>
+<title>Change BG color</title>
+</head>
+<style>
+button{
+width: 400px;
+height: 200px;
+border-radius: 40px;
+margin-top: 16%;
+}
+span{
+font-size: 30px;
+}
+</style>
+<body>
+<center>
+<button color="white" id="Color_change" onclick="changeBgcolor()"><span>Click to
+change color</span></button>
+<br>
+<br>
+<label style="font-size:50px;" id="color" style="color: white;">white</label>
+<script src="color.js"></script>
+</center>
+</body>
+</html>
